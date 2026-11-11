@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: valora
+      POSTGRES_USER: valora
+      POSTGRES_PASSWORD: ${VALORA_DB_PASSWORD}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - valora-postgres:/var/lib/postgresql/data
+
+volumes:
+  valora-postgres:
